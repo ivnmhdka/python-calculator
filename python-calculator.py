@@ -27,6 +27,7 @@ def Answer():
     text = str(bar.get())
     try:
         answer = eval(text)
+        answer = round(answer,10)
         Delete()
         bar.insert(0, answer)
         bar['fg'] = "black"
@@ -65,15 +66,15 @@ b9.place(x=2*X,y=(3*Y)+20)
 b0 = Button(root,text="0",font=("Poppins",16,"bold"),padx = 20,pady = 16,bd = 4,bg="white",command=lambda:insert("0"))
 b0.place(x=X,y=(4*Y)+20)
 
-# Decimal
+# Decimal .
 dot = Button(root,text=".",font=("Poppins",16,"bold"),padx = 23,pady = 16,bd = 4,bg="grey",command=lambda:insert("."))
 dot.place(x=0,y=(4*Y)+20)
 
-# Answer
+# Answer =
 sama_dengan = Button(root,text="=",font=("Poppins",16,"bold"),padx = 20,pady = 16,bd = 4,bg="orange",command=Answer)
 sama_dengan.place(x=2*X,y=(4*Y)+20)
 
-# Insert
+# Insert * / + -
 kali = Button(root,text="x",font=("Poppins",16,"bold"),padx = 22,pady = 16,bd = 4,bg="grey",command=lambda:insert("*"))
 kali.place(x=3*X,y=Y+20)
 
@@ -86,7 +87,7 @@ tambah.place(x=3*X,y=(3*Y)+20)
 kurang = Button(root,text="-",font=("Poppins",16,"bold"),padx = 25,pady = 16,bd = 4,bg="grey",command=lambda:insert("-"))
 kurang.place(x=3*X,y=(4*Y)+20)
 
-# Clear
+# Clear 
 C = Button(root,text="C",font=("Poppins",16,"bold"),padx = 19,pady = 6,bd = 4,bg="orange",command=Delete)
 C.place(x=0,y=Y-35)
 
