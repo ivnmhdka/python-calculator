@@ -44,6 +44,10 @@ def Answer():
         bar.delete(0, END)
         bar.insert(END, "Error")
         bar['fg'] = "red"
+    except(ZeroDivisionError):
+        bar.delete(0, END)
+        bar.insert(END, "Error")
+        bar['fg'] = "red"
 
 b1 = Button(root,text="1",font=("Poppins",16,"bold"),padx = 20,pady = 16,bd = 4,bg="white",command=lambda:insert("1"))
 b1.place(x=0,y=Y+20)
@@ -97,10 +101,10 @@ kurang = Button(root,text="-",font=("Poppins",16,"bold"),padx = 25,pady = 16,bd 
 kurang.place(x=3*X,y=(4*Y)+20)
 
 # Clear 
-C = Button(root,text="C",font=("Poppins",16,"bold"),padx = 19,pady = 6,bd = 4,bg="orange",command=Delete)
+C = Button(root,text="C",font=("Poppins",16,"bold"),padx = 57,pady = 6,bd = 4,bg="orange",command=Delete)
 C.place(x=0,y=Y-35)
 
-CE = Button(root,text="CE",font=("Poppins",16,"bold"),padx = 12,pady = 6,bd = 4,bg="orange",command=BackSpace)
-CE.place(x=X,y=Y-35)
+CE = Button(root,text="CE",font=("Poppins",16,"bold"),padx = 50,pady = 6,bd = 4,bg="orange",command=BackSpace)
+CE.place(x=2*X,y=Y-35)
 
 root.mainloop()
