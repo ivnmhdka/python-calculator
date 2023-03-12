@@ -26,12 +26,21 @@ def Delete():
 def Answer():
     text = str(bar.get())
     try:
+        errors = ['**', '//', '-+', '---', '+--', '++']
+        for eror in errors:
+            if text.find(eror)>0:
+                raise SyntaxError
+
         answer = eval(text)
         answer = round(answer,10)
+        
+        if float(answer).is_integer():
+            answer = int(answer)
+        
         Delete()
         bar.insert(0, answer)
         bar['fg'] = "black"
-    except:
+    except(SyntaxError):
         bar.delete(0, END)
         bar.insert(END, "Error")
         bar['fg'] = "red"
