@@ -40,15 +40,20 @@ def Answer():
         Delete()
         bar.insert(0, answer)
         bar['fg'] = "black"
+        
+# Menginputkan syntax yang tidak valid / kesahlahan penulisan
     except(SyntaxError):
         bar.delete(0, END)
         bar.insert(END, "Error")
         bar['fg'] = "red"
+        
+# Pembagian membagi angka dengan 0
     except(ZeroDivisionError):
         bar.delete(0, END)
-        bar.insert(END, "Error")
+        bar.insert(END, "Tidak Bisa Dibagi 0")
         bar['fg'] = "red"
 
+# Button Number
 b1 = Button(root,text="1",font=("Poppins",16,"bold"),padx = 20,pady = 16,bd = 4,bg="white",command=lambda:insert("1"))
 b1.place(x=0,y=Y+20)
 
