@@ -47,11 +47,17 @@ def Answer():
         bar.insert(END, "Error")
         bar['fg'] = "red"
         
+# Mengembalikan warna teks ke warna aslinya setelah 2 detik
+        bar.after(2000, lambda: bar.config(fg='black'))
+        
 # Pembagian membagi angka dengan 0
     except(ZeroDivisionError):
         bar.delete(0, END)
         bar.insert(END, "Tidak Bisa Dibagi 0")
         bar['fg'] = "red"
+        
+# Mengembalikan warna teks ke warna aslinya setelah 2 detik
+        bar.after(2000, lambda: bar.config(fg='black'))
 
 # Button Number
 b1 = Button(root,text="1",font=("Poppins",16,"bold"),padx = 20,pady = 16,bd = 4,bg="white",command=lambda:insert("1"))
